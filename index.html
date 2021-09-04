@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <title>Test Dmitriy Horbatiuk</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mainWindow">
+        <div class="name">Test</div>
+        
+        <div class="addContainer">
+            <form>
+                <fieldset class="boxTop">
+                    <legend> Name/Value Pair </legend>
+                    <input id="firstInput" class="inputField" placeholder="Maybe you enter some names and values ? ( ͡° ͜ʖ ͡°)" >
+                    <button type="submit" id="addBtn" class="addBtn"> Add </button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="workSpace">
+            <div class="nameValueList">
+                <form>
+                    <fieldset>
+                        <button id="sortByNameBtn" class="sortByNameBtn"> Sort by Name </button>
+                        <button id="sortByValueBtn" class="sortByValueBtn"> Sort by Value </button>
+                        <button id="deleteBtn" class="deleteBtn"> Delete </button>
+                        <button id="showXmlBtn" class="showXmlBtn"> Show XML </button>
+
+                        <legend align="center"> Name / Value Pair List </legend>
+                        <input id="output" class="outputField" placeholder="some output">
+                </fieldset>
+                </form>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <script>
+        var db=openDatabase("itemDB", "1.0", "itemDB", 65535);
+        $(function).click(function() {
+            
+            $('#inputField').click(function(){
+                db.transaction(function(transaction){
+                    var sql="CREATE TABLE items" +
+                    "(id INTEGER NOT NULL PRIMARY KEY"
+                })
+            })
+        })
+    </script>
+    <script src="./main.js"></script>
+</body>
+</html>
