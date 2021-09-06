@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="user-scalable=no, width=device-width" />
     <title>Test Dmitriy Horbatiuk</title>
     <link rel="stylesheet" href="style.css">
@@ -15,7 +16,12 @@
             <form>
                 <fieldset class="boxTop">
                     <legend> Name/Value Pair </legend>
-                    <input id="firstInput" class="inputField" placeholder="Maybe you enter some names and values ? ( ͡° ͜ʖ ͡°)" >
+                        <input 
+                            id="inputField" 
+                            class="inputField" 
+                            placeholder="Maybe you enter some names and values ? ( ͡° ͜ʖ ͡°)"
+                            required
+                        />
                     <button type="submit" id="addBtn" class="addBtn"> Add </button>
                 </fieldset>
             </form>
@@ -31,8 +37,9 @@
                         <button id="showXmlBtn" class="showXmlBtn"> Show XML </button>
 
                         <legend align="center"> Name / Value Pair List </legend>
-                        <input id="output" class="outputField" placeholder="some output">
-                </fieldset>
+                        <textarea id="output" class="outputField">
+                        </textarea>
+                    </fieldset>
                 </form>
             </div>
         </div>
@@ -40,18 +47,6 @@
         </div>
     </div>
     </div>
-    <script>
-        var db=openDatabase("itemDB", "1.0", "itemDB", 65535);
-        $(function).click(function() {
-            
-            $('#inputField').click(function(){
-                db.transaction(function(transaction){
-                    var sql="CREATE TABLE items" +
-                    "(id INTEGER NOT NULL PRIMARY KEY"
-                })
-            })
-        })
-    </script>
     <script src="./main.js"></script>
 </body>
 </html>
